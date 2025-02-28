@@ -54,4 +54,8 @@ public class UserController {
         userService.deleteUser(id);
         return "User with ID " + id + " deleted successfully!";
     }
+    @GetMapping("/name/{name}")
+    public User getUserByName(@PathVariable String name) {
+        return userService.getUserByName(name);
+    }
 }

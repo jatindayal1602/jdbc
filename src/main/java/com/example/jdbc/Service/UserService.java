@@ -50,4 +50,8 @@ public class UserService {
 
         userRepository.delete(user);
     }
+    public User getUserByName(String name) {
+        return userRepository.findByName(name)
+                .orElseThrow(() -> new NoSuchElementException("User with name " + name + " not found!"));
+    }
 }
